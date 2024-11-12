@@ -31,7 +31,6 @@ repos:
     rev: 5.13.2
     hooks:
       - id: isort
-        args: ["--profile", "black"]
 
   # Spelling and linting
   - repo: https://github.com/codespell-project/codespell
