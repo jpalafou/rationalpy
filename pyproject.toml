@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rationalpy"
+version = "0.1.0"
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+docs = ["sphinx", "furo", "myst_parser"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["rationalpy"]
