@@ -84,4 +84,4 @@ print(rarr1 / rarr2)
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE]() for more information.
+This project is licensed under the MIT License. See [LICENSE](https://github.com/jpalafou/rationalpy/blob/main/LICENSE) for more information.
