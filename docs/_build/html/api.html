@@ -5,9 +5,9 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="Installing" href="installing.html" />
 
-    <!-- Generated with Sphinx 7.3.7 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>API Documentation - rationalpy 0.1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     
@@ -249,41 +249,39 @@
 <p>This module provides functionality for handling rational numbers.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="rationalpy.RationalArray">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rationalpy.</span></span><span class="sig-name descname"><span class="pre">RationalArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numerator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">denominator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_simplify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rationalpy.RationalArray" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rationalpy.</span></span><span class="sig-name descname"><span class="pre">RationalArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numerator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">denominator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_simplify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dtype</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'K'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndmin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rationalpy.RationalArray" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayOperatorsMixin</span></code></p>
 <p>A class to represent arrays of rational numbers.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="rationalpy.RationalArray.asnumpy">
-<span class="sig-name descname"><span class="pre">asnumpy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#rationalpy.RationalArray.asnumpy" title="Link to this definition">¶</a></dt>
-<dd><p>Return the RationalArray as a numpy array.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>np.ndarray: The RationalArray as a numpy array.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="rationalpy.RationalArray.asratio">
 <span class="sig-name descname"><span class="pre">asratio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rationalpy.RationalArray.asratio" title="Link to this definition">¶</a></dt>
 <dd><p>Return the RationalArray as a tuple of numpy arrays.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>Tuple[np.ndarray, np.ndarray]: The RationalArray as a tuple of numpy arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The RationalArray as a tuple of numpy arrays.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[np.ndarray, np.ndarray]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="rationalpy.RationalArray.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array.RationalArray"><span class="pre">RationalArray</span></a></span></span><a class="headerlink" href="#rationalpy.RationalArray.copy" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array_class.RationalArray"><span class="pre">RationalArray</span></a></span></span><a class="headerlink" href="#rationalpy.RationalArray.copy" title="Link to this definition">¶</a></dt>
 <dd><p>Return a copy of the RationalArray.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="rationalpy.RationalArray.decompose">
-<span class="sig-name descname"><span class="pre">decompose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array.RationalArray"><span class="pre">RationalArray</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array.RationalArray"><span class="pre">RationalArray</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rationalpy.RationalArray.decompose" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">decompose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array_class.RationalArray"><span class="pre">RationalArray</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array_class.RationalArray"><span class="pre">RationalArray</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rationalpy.RationalArray.decompose" title="Link to this definition">¶</a></dt>
 <dd><p>Decompose the rational array into two parts: n_i / 1 and 1 / d_i.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>Tuple[RationalArray, RationalArray]: The decomposed RationalArrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The decomposed RationalArrays.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[<a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.RationalArray">RationalArray</a>, <a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.RationalArray">RationalArray</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -292,15 +290,16 @@
 <dt class="sig sig-object py" id="rationalpy.RationalArray.form_common_denominator">
 <span class="sig-name descname"><span class="pre">form_common_denominator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rationalpy.RationalArray.form_common_denominator" title="Link to this definition">¶</a></dt>
 <dd><p>Form a common denominator for the rational array.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>inplace (bool, optional): Whether to perform the operation in-place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inplace</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to perform the operation in-place.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="rationalpy.RationalArray.reciprocal">
-<span class="sig-name descname"><span class="pre">reciprocal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array.RationalArray"><span class="pre">RationalArray</span></a></span></span><a class="headerlink" href="#rationalpy.RationalArray.reciprocal" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reciprocal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array_class.RationalArray"><span class="pre">RationalArray</span></a></span></span><a class="headerlink" href="#rationalpy.RationalArray.reciprocal" title="Link to this definition">¶</a></dt>
 <dd><p>Return the reciprocal of the RationalArray (1 / self).</p>
 </dd></dl>
 
@@ -308,12 +307,85 @@
 <dt class="sig sig-object py" id="rationalpy.RationalArray.simplify">
 <span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rationalpy.RationalArray.simplify" title="Link to this definition">¶</a></dt>
 <dd><p>Element-wise rational array simplification.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>inplace (bool, optional): Whether to perform the operation in-place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inplace</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to perform the operation in-place.</p>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="rationalpy.RationalArray.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simplify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rationalpy.RationalArray.validate" title="Link to this definition">¶</a></dt>
+<dd><p>Validate the RationalArray arrays with optional simplification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>simplify</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to simplify the RationalArray after
+validation. If not provided, the auto_simplify attribute is used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rationalpy.asnumpy">
+<span class="sig-prename descclassname"><span class="pre">rationalpy.</span></span><span class="sig-name descname"><span class="pre">asnumpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rarr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array_class.RationalArray"><span class="pre">RationalArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dtype</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#rationalpy.asnumpy" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a RationalArray to a numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rarr</strong> (<a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.RationalArray"><em>RationalArray</em></a>) – The RationalArray to convert.
+dtype (np.dtype, optional): The data type of the output numpy array.</p></li>
+<li><p><strong>provided</strong> (<em>If not</em>)</p></li>
+<li><p><strong>RationalArray.</strong> (<em>the data type is inferred from the</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A numpy array with the same shape as the RationalArray.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rationalpy.rational_array">
+<span class="sig-prename descclassname"><span class="pre">rationalpy.</span></span><span class="sig-name descname"><span class="pre">rational_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numerator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">denominator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_simplify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dtype</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'K'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndmin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.rational_array_class.RationalArray"><span class="pre">RationalArray</span></a></span></span><a class="headerlink" href="#rationalpy.rational_array" title="Link to this definition">¶</a></dt>
+<dd><p>Factory function to create a RationalArray.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numerator</strong> (<em>array_like</em>) – The numerator values. Must be an integer array.</p></li>
+<li><p><strong>denominator</strong> (<em>array_like</em>) – The denominator values. If not provided,
+the denominator is set to 1. Must be an integer array.</p></li>
+<li><p><strong>auto_simplify</strong> (<em>bool</em>) – Whether to simplify the RationalArray after
+it is initialized.</p></li>
+<li><p><strong>dtype</strong> (<em>np.dtype</em><em>, </em><em>optional</em>) – The data type of the <cite>numerator</cite> and
+<cite>denominator</cite> arrays. If not provided, the data type is inferred from
+input arrays. Must be an integer data type. Passed to numpy.array.</p></li>
+<li><p><strong>copy</strong> (<em>bool</em>) – Whether to copy the input arrays when defining the
+<cite>numerator</cite> and <cite>denominator</cite> attributes. Passed to numpy.array.</p></li>
+<li><p><strong>order</strong> (<em>str</em>) – The memory layout of the <cite>numerator</cite> and
+<cite>denominator</cite> attributes. Passed to numpy.array.</p></li>
+<li><p><strong>ndmin</strong> (<em>int</em>) – The minimum number of dimensions of the <cite>numerator</cite>
+and <cite>denominator</cite> attributes. Passed to numpy.array.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A RationalArray object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#rationalpy.RationalArray" title="rationalpy.RationalArray">RationalArray</a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<dl class="simple">
+<dt>The <cite>dtype</cite>, <cite>copy</cite>, <cite>order</cite>, and <cite>ndmin</cite> arguments are passed to the</dt><dd><p>numpy.array function when defining the <cite>numerator</cite> and <cite>denominator</cite>
+attributes. See the numpy.array documentation for more information.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -375,15 +447,17 @@
             <ul>
 <li><a class="reference internal" href="#">API Documentation</a><ul>
 <li><a class="reference internal" href="#rationalpy.RationalArray"><code class="docutils literal notranslate"><span class="pre">RationalArray</span></code></a><ul>
-<li><a class="reference internal" href="#rationalpy.RationalArray.asnumpy"><code class="docutils literal notranslate"><span class="pre">RationalArray.asnumpy()</span></code></a></li>
 <li><a class="reference internal" href="#rationalpy.RationalArray.asratio"><code class="docutils literal notranslate"><span class="pre">RationalArray.asratio()</span></code></a></li>
 <li><a class="reference internal" href="#rationalpy.RationalArray.copy"><code class="docutils literal notranslate"><span class="pre">RationalArray.copy()</span></code></a></li>
 <li><a class="reference internal" href="#rationalpy.RationalArray.decompose"><code class="docutils literal notranslate"><span class="pre">RationalArray.decompose()</span></code></a></li>
 <li><a class="reference internal" href="#rationalpy.RationalArray.form_common_denominator"><code class="docutils literal notranslate"><span class="pre">RationalArray.form_common_denominator()</span></code></a></li>
 <li><a class="reference internal" href="#rationalpy.RationalArray.reciprocal"><code class="docutils literal notranslate"><span class="pre">RationalArray.reciprocal()</span></code></a></li>
 <li><a class="reference internal" href="#rationalpy.RationalArray.simplify"><code class="docutils literal notranslate"><span class="pre">RationalArray.simplify()</span></code></a></li>
+<li><a class="reference internal" href="#rationalpy.RationalArray.validate"><code class="docutils literal notranslate"><span class="pre">RationalArray.validate()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#rationalpy.asnumpy"><code class="docutils literal notranslate"><span class="pre">asnumpy()</span></code></a></li>
+<li><a class="reference internal" href="#rationalpy.rational_array"><code class="docutils literal notranslate"><span class="pre">rational_array()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -396,7 +470,7 @@
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=01f34227"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
     </body>
