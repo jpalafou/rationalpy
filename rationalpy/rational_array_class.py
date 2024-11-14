@@ -38,8 +38,8 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
 
     def __init__(
         self,
-        numerator: Union[np.ndarray, List, Tuple, int],
-        denominator: Union[np.ndarray, List, Tuple, int] = 1,
+        numerator: Union[np.ndarray, list, tuple, int],
+        denominator: Union[np.ndarray, list, tuple, int] = 1,
         auto_simplify: bool = True,
         dtype: Optional[np.dtype] = None,
         copy: bool = True,
@@ -248,16 +248,21 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
         """
         if type(value) is self.__class__:
             # Assign from another RationalArray
-            self.numerator[key] = value.numerator
-            self.denominator[key] = value.denominator
-        elif isinstance(value, (list, tuple, int)):
-            # Handle the case of assigning from a scalar or array-like pair
-            n, d = value if isinstance(value, (list, tuple)) else (value, 1)
-            self.numerator[key] = n
-            self.denominator[key] = d
+            assigned_numerator = value.numerator
+            assigned_denominator = value.denominator
+        elif isinstance(value, tuple) or isinstance(value, list):
+            if len(value) != 2:
+                raise ValueError(
+                    "Tuple must have two elements: (numerator, denominator"
+                )
+            assigned_numerator, assigned_denominator = value
+        elif np.issubdtype(type(value), np.integer):
+            assigned_numerator, assigned_denominator = value, 1
         else:
-            # Handle the case of assigning from a scalar or array
             raise ValueError(f"Cannot assign from type {type(value)} to RationalArray.")
+
+        self.numerator[key] = assigned_numerator
+        self.denominator[key] = assigned_denominator
 
     def form_common_denominator(self, inplace: bool = True):
         """Form a common denominator for the rational array.
