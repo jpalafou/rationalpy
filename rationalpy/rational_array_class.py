@@ -429,7 +429,7 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
                 provided, the data type is inferred from the RationalArray.
             copy (bool, optional): Unused parameter. Kept for compatibility with numpy.
         """
-        if not copy:
+        if copy is False:
             raise ValueError("Cannot set copy=False for RationalArray.__array__.")
         return np.array(self.numerator / self.denominator, dtype=dtype)
 
