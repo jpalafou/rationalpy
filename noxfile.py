@@ -28,9 +28,9 @@ def docs(session):
     session.install(".[docs]")
 
     # Build the documentation
-    session.run("sphinx-build", "docs", "docs/_build/html")
+    session.run("sphinx-build", "doc", "_build")
 
     # Optional: Open the documentation in a web browser
-    session.run("open", "docs/_build/html/index.html")  # On macOS
+    session.run("open", "_build/index.html")  # On macOS
     # For Linux, you might use `xdg-open`
     # For Windows, you might use `start`
