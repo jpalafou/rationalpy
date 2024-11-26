@@ -6,6 +6,7 @@
 - [RationalPy](#rationalpy)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
+  - [Documentation](#documentation)
   - [Usage](#usage)
   - [Features](#features)
   - [Examples](#examples)
@@ -24,6 +25,10 @@ pip install rationalpy
 For optional development dependencies (e.g., testing and documentation), install with:
 
 ```pip install .[test,docs]```
+
+## Documentation
+
+For complete documentation, visit the [documentation website](https://jpalafou.com/rationalpy/index.html).
 
 ## Usage
 
