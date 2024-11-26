@@ -15,12 +15,10 @@
 
 ## Installation
 
-To install `rationalpy`, clone the repository and use `pip`:
+To install `rationalpy`, use `pip`:
 
 ```bash
-git clone https://github.com/jpalafou/rationalpy.git
-cd rationalpy
-pip install .
+pip install rationalpy
 ```
 
 For optional development dependencies (e.g., testing and documentation), install with:
