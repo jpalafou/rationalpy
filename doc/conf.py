@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 project = "rationalpy"
 author = "Jonathan Palafoutas"
-release = "0.1.0"
+release = "0.1.0.post1"
 
 extensions = ["myst_parser", "sphinx.ext.autodoc", "sphinx.ext.napoleon"]
 
