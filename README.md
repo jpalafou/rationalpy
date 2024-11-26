@@ -1,6 +1,6 @@
 # RationalPy
 
-`rationalpy` is a Python library and extension of numpy designed for creating and manipulating arrays of rational numbers, represented as exact fractions. It enables users to perform arithmetic operations on arrays while maintaining an exact rational representation.
+`rationalpy` is a Python library and extension of NumPy designed for creating and manipulating arrays of rational numbers, represented as exact fractions. It enables users to perform arithmetic operations on arrays while maintaining an exact rational representation.
 
 ## Table of Contents
 - [RationalPy](#rationalpy)
