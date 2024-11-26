@@ -33,4 +33,4 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
           python -m twine check dist/*
-          python -m twine upload --verbose dist/*
+          python -m twine upload --verbose --skip-existing dist/*
