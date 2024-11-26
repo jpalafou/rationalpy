@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "rationalpy"
-version = "0.1.0.post2"
+version = "0.1.1"
 description = "NumPy extension enabling arrays of rational numbers (fractions)."
 long_description = "README.md"
 readme = "README.md"

@@ -13,3 +13,7 @@
 ## [0.1.0.post2] - 2024-11-26
 ### Added
 - Added changelog to track future releases.
+
+## [0.1.1] - 2024-11-6
+### Fixed
+- rational_array() default denominator

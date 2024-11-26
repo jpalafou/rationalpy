@@ -25,7 +25,7 @@ def asnumpy(
 
 def rational_array(
     numerator: Union[int, List, Tuple, np.ndarray],
-    denominator: Union[int, List, Tuple, np.ndarray] = None,
+    denominator: Union[int, List, Tuple, np.ndarray] = 1,
     auto_simplify: bool = True,
     dtype: np.dtype = None,
     copy: bool = True,

@@ -3,9 +3,10 @@ from typing import List, Tuple, Union
 import numpy as np
 import pytest
 
-from rationalpy import RationalArray
+from rationalpy import RationalArray, asnumpy, rational_array
 
 
+@pytest.mark.parametrize("from_constructor_function", [False, True])
 @pytest.mark.parametrize("numerator", [3, (1, 2), [1, 2], np.array([1, 2])])
 @pytest.mark.parametrize("denominator", [None, 4, (3, 4), [3, 4], np.array([3, 4])])
 @pytest.mark.parametrize("auto_simplify", [True, False])
@@ -14,6 +15,7 @@ from rationalpy import RationalArray
 @pytest.mark.parametrize("order", ["C", "F", "A", "K"])
 @pytest.mark.parametrize("ndmin", [0, 1, 2])
 def test_RationalArray_init(
+    from_constructor_function: bool,
     numerator: Union[int, List, Tuple, np.ndarray],
     denominator: Union[int, List, Tuple, np.ndarray],
     auto_simplify: bool,
@@ -38,8 +40,9 @@ def test_RationalArray_init(
         pytest.skip("ndmin != 0 requires copy=True")
 
     # Initialize RationalArray and target values
+    init_func = RationalArray if from_constructor_function else rational_array
     rarr = (
-        RationalArray(
+        init_func(
             numerator,
             denominator,
             auto_simplify=auto_simplify,
@@ -49,7 +52,7 @@ def test_RationalArray_init(
             ndmin=ndmin,
         )
         if denominator is not None
-        else RationalArray(
+        else init_func(
             numerator,
             auto_simplify=auto_simplify,
             dtype=dtype,
@@ -424,7 +427,11 @@ def test_RationalArray_negate():
 """Test conversion to numpy array"""
 
 
+@pytest.mark.parametrize("from_constructor_function", [False, True])
 @pytest.mark.parametrize("dtype", [None, np.int32, np.int64, np.longlong])
-def test_RationalArray_array(dtype):
+def test_RationalArray_array(from_constructor_function: bool, dtype: np.dtype):
     ra = RationalArray(np.array([1, 2]), np.array([3, 4]))
-    assert np.allclose(np.array(ra, dtype=dtype), np.array([1 / 3, 2 / 4], dtype=dtype))
+    numpy_func = asnumpy if from_constructor_function else np.array
+    assert np.allclose(
+        numpy_func(ra, dtype=dtype), np.array([1 / 3, 2 / 4], dtype=dtype)
+    )
