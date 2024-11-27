@@ -427,11 +427,14 @@ def test_RationalArray_negate():
 """Test conversion to numpy array"""
 
 
-@pytest.mark.parametrize("from_constructor_function", [False, True])
+@pytest.mark.parametrize("mode", ["constructor", "method", "numpy"])
 @pytest.mark.parametrize("dtype", [None, np.int32, np.int64, np.longlong])
-def test_RationalArray_array(from_constructor_function: bool, dtype: np.dtype):
-    ra = RationalArray(np.array([1, 2]), np.array([3, 4]))
-    numpy_func = asnumpy if from_constructor_function else np.array
-    assert np.allclose(
-        numpy_func(ra, dtype=dtype), np.array([1 / 3, 2 / 4], dtype=dtype)
-    )
+def test_RationalArray_array(mode: str, dtype: np.dtype):
+    rational_arr = RationalArray(np.array([1, 2]), np.array([3, 4]))
+    if mode == "constructor":
+        numpy_arr = asnumpy(rational_arr, dtype=dtype)
+    elif mode == "method":
+        numpy_arr = rational_arr.asnumpy(dtype=dtype)
+    elif mode == "numpy":
+        numpy_arr = np.array(rational_arr, dtype=dtype)
+    assert np.allclose(numpy_arr, np.array([1 / 3, 2 / 4], dtype=dtype))

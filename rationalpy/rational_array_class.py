@@ -229,9 +229,7 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
         Args:
             key: The key to index the RationalArray.
         """
-        return self.__class__(
-            self.numerator[key], self.denominator[key], auto_simplify=False
-        )
+        return self.__class__(self.numerator[key], self.denominator[key])
 
     def __setitem__(self, key, value: Union["RationalArray", Tuple[int, int], int]):
         """
@@ -333,7 +331,7 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
         rarr = self.__class__(
             n1 * (lcm // d1) + n2 * (lcm // d2),
             lcm,
-            auto_simplify=self.auto_simplify or other.auto_simplify,
+            auto_simplify=self.auto_simplify and other.auto_simplify,
         )
         return rarr
 
@@ -364,7 +362,7 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
         n1, d1 = self.numerator, self.denominator
         n2, d2 = other.numerator, other.denominator
         rarr = self.__class__(
-            n1 * n2, d1 * d2, auto_simplify=self.auto_simplify or other.auto_simplify
+            n1 * n2, d1 * d2, auto_simplify=self.auto_simplify and other.auto_simplify
         )
         return rarr
 
@@ -428,10 +426,28 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
             dtype (np.dtype, optional): The data type of the output numpy array. If not
                 provided, the data type is inferred from the RationalArray.
             copy (bool, optional): Unused parameter. Kept for compatibility with numpy.
+
+        Returns:
+            np.ndarray: The RationalArray as a numpy array
         """
         if copy is False:
             raise ValueError("Cannot set copy=False for RationalArray.__array__.")
         return np.array(self.numerator / self.denominator, dtype=dtype)
+
+    def asnumpy(self, dtype: Optional[np.dtype] = None, copy: Optional[bool] = None):
+        """
+        Alias for the __array__ method, which returns the RationalArray as a numpy
+            array.
+
+        Args:
+            dtype (np.dtype, optional): The data type of the output numpy array. If not
+                provided, the data type is inferred from the RationalArray.
+            copy (bool, optional): Unused parameter. Kept for compatibility with numpy.
+
+        Returns:
+            np.ndarray: The RationalArray as a numpy array
+        """
+        return self.__array__(dtype=dtype, copy=copy)
 
     def __array_ufunc__(self, ufunc, method, *inputs, **kwargs):
         if method == "__call__":
