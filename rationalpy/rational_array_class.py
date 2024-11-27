@@ -267,11 +267,14 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
 
         Args:
             inplace (bool, optional): Whether to perform the operation in-place.
+
+        Notes:
+            - The array is simplified before forming the common denominator.
         """
         rarr = self if inplace else self.copy()
 
         # Simplify negatives
-        rarr._simplify_negatives()
+        rarr.simplify()
 
         # Find common denominator
         lcm = np.lcm.reduce(rarr.denominator)
