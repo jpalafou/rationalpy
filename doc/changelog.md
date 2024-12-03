@@ -17,3 +17,10 @@
 ## [0.1.1] - 2024-11-6
 ### Fixed
 - rational_array() default denominator
+
+## [0.1.2] - 2024-12-2
+### Changed
+- Changes behavior of `auto_simplify` to set to `True` only if all arrays involved in an operation have `auto_simplify=True`.
+
+### Added
+- Support for empty rational arrays.
