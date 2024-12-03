@@ -297,6 +297,10 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
         """
         rarr = self if inplace else self.copy()
 
+        # early escape for empty arrays
+        if rarr.size == 0:
+            return rarr if not inplace else None
+
         # Simplify negatives
         rarr.simplify()
 
