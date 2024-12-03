@@ -69,18 +69,42 @@ class RationalArray(np.lib.mixins.NDArrayOperatorsMixin):
                 numpy.array function when defining the `numerator` and `denominator`
                 attributes. See the numpy.array documentation for more information.
         """
-        # Avoid copy=False for non-ndarray inputs
+        # validate input arguments
+        if not (
+            isinstance(numerator, np.ndarray)
+            or isinstance(numerator, list)
+            or isinstance(numerator, tuple)
+            or np.issubdtype(type(numerator), np.integer)
+        ):
+            raise ValueError("Numerator must be an ndarray, list, or tuple.")
+        if not (
+            isinstance(denominator, np.ndarray)
+            or isinstance(denominator, list)
+            or isinstance(denominator, tuple)
+            or np.issubdtype(type(denominator), np.integer)
+        ):
+            raise ValueError("Denominator must be an ndarray, list, or tuple.")
         if copy is False and not (
             isinstance(numerator, np.ndarray) and isinstance(denominator, np.ndarray)
         ):
             raise ValueError("Cannot set copy=False for non-ndarray inputs.")
 
-        # Declare numerator and denominator attributes as numpy arrays
+        # Handle empty non-ndarray inputs
+        if isinstance(numerator, list) or isinstance(numerator, tuple):
+            numerator_dtype = int if len(numerator) == 0 else dtype
+        else:
+            numerator_dtype = dtype
+        if isinstance(denominator, list) or isinstance(denominator, tuple):
+            denominator_dtype = int if len(denominator) == 0 else dtype
+        else:
+            denominator_dtype = dtype
+
+        # Initialize numerator and denominator arrays
         self.numerator = np.array(
-            numerator, dtype=dtype, copy=copy, order=order, ndmin=ndmin
+            numerator, dtype=numerator_dtype, copy=copy, order=order, ndmin=ndmin
         )
         self.denominator = np.array(
-            denominator, dtype=dtype, copy=copy, order=order, ndmin=ndmin
+            denominator, dtype=denominator_dtype, copy=copy, order=order, ndmin=ndmin
         )
 
         # Handle scalar inputs

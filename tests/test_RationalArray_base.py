@@ -1,4 +1,4 @@
-from typing import List, Tuple, Union
+from typing import Union
 
 import numpy as np
 import pytest
@@ -16,8 +16,8 @@ from rationalpy import RationalArray, asnumpy, rational_array
 @pytest.mark.parametrize("ndmin", [0, 1, 2])
 def test_RationalArray_init(
     from_constructor_function: bool,
-    numerator: Union[int, List, Tuple, np.ndarray],
-    denominator: Union[int, List, Tuple, np.ndarray],
+    numerator: Union[int, list, tuple, np.ndarray],
+    denominator: Union[int, list, tuple, np.ndarray],
     auto_simplify: bool,
     dtype: np.dtype,
     copy: bool,
@@ -90,6 +90,23 @@ def test_RationalArray_init_copy_False():
     denominator[1] = 7
     assert np.array_equal(rarr.numerator, numerator)
     assert np.array_equal(rarr.denominator, denominator)
+
+
+@pytest.mark.parametrize("numerator", [[], (), np.array([], dtype=int)])
+@pytest.mark.parametrize("denominator", [None, [], (), np.array([], dtype=int)])
+def test_RationalArray_init_empty(
+    numerator: Union[list, tuple, np.ndarray],
+    denominator: Union[list, tuple, np.ndarray],
+):
+    """Test RationalArray initialization with empty arrays."""
+    rarr = (
+        RationalArray(numerator, denominator)
+        if denominator is not None
+        else RationalArray(numerator)
+    )
+    assert rarr.shape == (0,)
+    assert np.array_equal(rarr.numerator, np.array([]))
+    assert np.array_equal(rarr.denominator, np.array([]))
 
 
 """Test invalid initialization configurations"""
