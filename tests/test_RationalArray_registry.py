@@ -22,7 +22,7 @@ def test_RationalArray_numpy_append():
 
 def test_RationalArray_numpy_concatenate():
     """Test numpy.concatenate implementation for RationalArray."""
-    empty = RationalArray([], [], auto_simplify=False)
+    empty = RationalArray([], [])
     ra1 = RationalArray(np.array([1, 2]), np.array([3, 4]), auto_simplify=False)
     ra2 = RationalArray(np.array([2, 3]), np.array([4, 5]), auto_simplify=False)
     result = np.concatenate([empty, ra1, ra2])

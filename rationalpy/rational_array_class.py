@@ -537,7 +537,7 @@ def concatenate(arrs: List[RationalArray], axis: Optional[int] = None) -> Ration
     # Collect all numerators and denominators from input arrays
     nums = [arr.numerator for arr in arrs]
     dens = [arr.denominator for arr in arrs]
-    auto_simplify = any(arr.auto_simplify for arr in arrs)
+    auto_simplify = all(arr.auto_simplify for arr in arrs)
 
     # Concatenate the numerators and denominators along the specified axis
     concatenated_numerator = np.concatenate(nums, axis=axis)
