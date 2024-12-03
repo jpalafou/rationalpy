@@ -24,3 +24,7 @@
 
 ### Added
 - Support for empty rational arrays.
+
+## [0.1.2.post1] - 2024-12-2
+### Fixed
+- `form_common_denominator` issue with empty arrays.
